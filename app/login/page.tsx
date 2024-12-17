@@ -1,9 +1,17 @@
+import { SignInButton } from '@clerk/nextjs'
+import { auth } from '@clerk/nextjs/server'
 import { LogInIcon } from 'lucide-react'
 import Image from 'next/image'
+import { redirect } from 'next/navigation'
 
 import { Button } from '../_components/ui/button'
 
-const LoginPage = () => {
+const LoginPage = async () => {
+  const { userId } = await auth()
+  if (userId) {
+    redirect('/')
+  }
+
   return (
     <div className="grid h-full">
       <div className="mx-auto flex h-full max-w-[500px] flex-col justify-center p-8">
@@ -19,10 +27,12 @@ const LoginPage = () => {
           O ModeON Marketing Tracker é uma plataforma de gestão financeira para
           monitorar suas movimentações facilitando o controle do orçamento.
         </p>
-        <Button variant="outline">
-          <LogInIcon />
-          Fazer login ou criar conta
-        </Button>
+        <SignInButton>
+          <Button variant="outline">
+            <LogInIcon />
+            Fazer login ou criar conta
+          </Button>
+        </SignInButton>
       </div>
     </div>
   )
