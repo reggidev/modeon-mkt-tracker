@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="flex justify-end px-4 py-2">
+      <header className="-mt-7 flex justify-end px-4 py-2">
         <Button onClick={handleSignOutClick} variant="outline">
           <LogOutIcon size={16} />
           Sair
