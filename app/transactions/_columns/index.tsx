@@ -5,13 +5,9 @@ import { ColumnDef } from '@tanstack/react-table'
 import { PencilIcon, TrashIcon } from 'lucide-react'
 
 import { Button } from '@/app/_components/ui/button'
+import { TRANSACTION_CATEGORY_LABELS } from '@/app/_constants/transactions'
 
 import TransactionPlatformBadge from '../_components/platform-badge'
-
-export const TRANSACTION_CATEGORY_LABELS = {
-  MARKETING: 'Marketing',
-  PAID_TRAFFIC: 'Tráfego Pago',
-}
 
 export const transactionColumns: ColumnDef<Transaction>[] = [
   {
