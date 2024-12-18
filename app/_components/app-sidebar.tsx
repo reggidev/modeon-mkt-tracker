@@ -38,8 +38,8 @@ const data = {
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const pathname = usePathname()
   const { state } = useSidebar()
+  const pathname = usePathname()
 
   return (
     <Sidebar {...props} collapsible="icon">
@@ -56,10 +56,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenu>
             {data.navMain.map((item) => (
               <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton className="py-5" asChild>
+                <SidebarMenuButton className="py-4" asChild>
                   <Link
                     href={item.url}
-                    className={`font-medium ${pathname === item.url ? 'bg-muted-foreground/10' : ''}`}
+                    className={`font-medium ${pathname === item.url ? 'bg-muted-foreground/15' : ''}`}
                   >
                     <item.icon />
                     {item.title}

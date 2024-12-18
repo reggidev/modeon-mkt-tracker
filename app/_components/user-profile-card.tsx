@@ -1,9 +1,11 @@
+'use client'
+
 import { useUser } from '@clerk/nextjs'
 
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 
 interface UserProfileCardProps {
-  isCollapsed?: 'expanded' | 'collapsed'
+  isCollapsed: 'expanded' | 'collapsed'
 }
 
 const UserProfileCard = ({ isCollapsed }: UserProfileCardProps) => {
