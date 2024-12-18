@@ -17,6 +17,7 @@ import {
   SidebarMenuItem,
   SidebarRail,
   SidebarSeparator,
+  useSidebar,
 } from '@/app/_components/ui/sidebar'
 
 import UserProfileCard from './user-profile-card'
@@ -38,6 +39,7 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname()
+  const { state } = useSidebar()
 
   return (
     <Sidebar {...props} collapsible="icon">
@@ -70,7 +72,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarContent>
       <SidebarSeparator />
       <SidebarFooter className="flex items-center justify-center py-4">
-        <UserProfileCard />
+        <UserProfileCard isCollapsed={state} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
