@@ -9,7 +9,8 @@ export default function DashboardLayout({
   return (
     <SidebarProvider>
       <AppSidebar />
-      <main className="grid w-full grid-cols-[auto,1fr]">
+
+      <main className="flex w-full flex-col">
         <SidebarTrigger />
         {children}
       </main>
