@@ -4,6 +4,7 @@ import { useClerk } from '@clerk/nextjs'
 import { LogOutIcon } from 'lucide-react'
 import { redirect } from 'next/navigation'
 
+import ToggleThemeButton from './toggle-theme-button'
 import { Button } from './ui/button'
 import { Separator } from './ui/separator'
 
@@ -17,7 +18,8 @@ const Header = () => {
 
   return (
     <>
-      <header className="-mt-7 flex justify-end px-4 py-2">
+      <header className="-mt-7 flex justify-end gap-3 px-4 py-2">
+        <ToggleThemeButton />
         <Button onClick={handleSignOutClick} variant="outline">
           <LogOutIcon size={16} />
           Sair

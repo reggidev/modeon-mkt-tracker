@@ -5,6 +5,8 @@ import { dark } from '@clerk/themes'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 
+import { ThemeProvider } from './_components/theme-provider'
+
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
   variable: '--font-geist-sans',
@@ -34,9 +36,16 @@ export default function RootLayout({
     >
       <html lang="pt-BR">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} dark antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <main>{children}</main>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <main>{children}</main>
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>
