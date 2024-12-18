@@ -25,7 +25,7 @@ const Header = () => {
           Sair
         </Button>
       </header>
-      <Separator className="bg-muted-foreground/50" />
+      <Separator className="bg-sidebar-border" />
     </>
   )
 }
