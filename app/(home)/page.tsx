@@ -7,11 +7,7 @@ const Home = async () => {
     redirect('/login')
   }
 
-  return (
-    <div className="flex h-full items-center justify-center bg-red-500">
-      Teste
-    </div>
-  )
+  return <div className="flex h-full bg-red-500">Teste</div>
 }
 
 export default Home
