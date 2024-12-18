@@ -5,10 +5,6 @@ import { dark } from '@clerk/themes'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 
-import { SidebarProvider, SidebarTrigger } from '@/app/_components/ui/sidebar'
-
-import { AppSidebar } from './_components/app-sidebar'
-
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
   variable: '--font-geist-sans',
@@ -40,13 +36,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} dark antialiased`}
         >
-          <SidebarProvider>
-            <AppSidebar />
-            <main className="grid w-full grid-cols-[auto,1fr]">
-              <SidebarTrigger />
-              {children}
-            </main>
-          </SidebarProvider>
+          <main>{children}</main>
         </body>
       </html>
     </ClerkProvider>
