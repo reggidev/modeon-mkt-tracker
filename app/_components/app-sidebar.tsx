@@ -1,6 +1,5 @@
 'use client'
 
-import { UserButton } from '@clerk/nextjs'
 import { ArrowLeftRightIcon, HomeIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -19,6 +18,8 @@ import {
   SidebarRail,
   SidebarSeparator,
 } from '@/app/_components/ui/sidebar'
+
+import UserProfileCard from './user-profile-card'
 
 const data = {
   navMain: [
@@ -69,7 +70,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarContent>
       <SidebarSeparator />
       <SidebarFooter className="flex items-center justify-center py-4">
-        <UserButton showName />
+        <UserProfileCard />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
