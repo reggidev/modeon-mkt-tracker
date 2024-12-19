@@ -7,6 +7,7 @@ import { getDashboard } from '../_data/get-dashboard'
 import InvestedPerPlatform from './_components/invested-per-platform'
 import TimeSelect from './_components/time-select'
 import TotalInvestedCard from './_components/total-invested-card'
+import TransactionsLineChart from './_components/transactions-line-chart'
 import TransactionPieChart from './_components/transactions-pie-chart'
 
 interface HomeProps {
@@ -45,6 +46,9 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
           <InvestedPerPlatform
             investedPerPlatform={dashboard.totalInvestedPerPlatform}
           />
+        </div>
+        <div>
+          <TransactionsLineChart />
         </div>
       </div>
     </>
