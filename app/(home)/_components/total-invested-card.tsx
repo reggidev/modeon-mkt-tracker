@@ -1,9 +1,4 @@
-import {
-  CoinsIcon,
-  MapPinnedIcon,
-  TrafficConeIcon,
-  WalletIcon,
-} from 'lucide-react'
+import { CoinsIcon, MapPinnedIcon, TrafficConeIcon } from 'lucide-react'
 
 import { Card, CardContent, CardHeader } from '@/app/_components/ui/card'
 
@@ -25,10 +20,7 @@ const TotalInvestedCard = async ({
     <div className="space-y-6">
       <Card>
         <CardHeader className="flex-row items-center gap-2">
-          <div className="rounded-lg bg-accent p-2">
-            <WalletIcon size={16} />
-          </div>
-          <p className="font-bold">Investimento</p>
+          <p className="text-2xl font-bold">Investimento</p>
         </CardHeader>
         <CardContent className="space-y-3">
           <PercentageItem

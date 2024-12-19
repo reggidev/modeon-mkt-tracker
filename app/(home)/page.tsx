@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation'
 
 import Header from '../_components/header'
 import { getDashboard } from '../_data/get-dashboard'
+import InvestedPerCategory from './_components/invested-per-category'
 import TimeSelect from './_components/time-select'
 import TotalInvestedCard from './_components/total-invested-card'
 import TransactionPieChart from './_components/transactions-pie-chart'
@@ -41,6 +42,9 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
         <div className="grid grid-cols-3 gap-6">
           <TotalInvestedCard month={month} {...dashboard} />
           <TransactionPieChart {...dashboard} />
+          <InvestedPerCategory
+            investedPerPlatform={dashboard.totalInvestedPerPlatform}
+          />
         </div>
       </div>
     </>

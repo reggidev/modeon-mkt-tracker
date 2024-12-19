@@ -2,7 +2,10 @@ import { TransactionCategory } from '@prisma/client'
 
 import { db } from '@/app/_lib/prisma'
 
-import type { TransactionPercentagePerCategory } from './types'
+import type {
+  TotalInvestedPerPlatform,
+  TransactionPercentagePerCategory,
+} from './types'
 
 export const getDashboard = async (month: string) => {
   /* Total Invested Card */
@@ -62,10 +65,29 @@ export const getDashboard = async (month: string) => {
   }
   /* Percentages Pie Chart */
 
+  /* Percentages per Platform (Component) */
+  const totalInvestedPerPlatform: TotalInvestedPerPlatform[] = (
+    await db.transaction.groupBy({
+      by: ['platform'],
+      where,
+      _sum: {
+        amount: true,
+      },
+    })
+  ).map((platform) => ({
+    platform: platform.platform,
+    totalAmount: Number(platform._sum.amount),
+    percentageOfTotal: Math.round(
+      (Number(platform._sum.amount) / Number(investmentTotal)) * 100,
+    ),
+  }))
+  /* Percentages per Platform (Component) */
+
   return {
     investmentTotal,
     marketingTotal,
     paidTrafficTotal,
     typesPercentage,
+    totalInvestedPerPlatform,
   }
 }
