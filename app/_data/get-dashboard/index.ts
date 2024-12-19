@@ -26,12 +26,12 @@ export const getDashboard = async (month: string) => {
       })
     )?._sum?.amount,
   )
-  const marketingTotal = Number(
+  const offlineTotal = Number(
     (
       await db.transaction.aggregate({
         where: {
           ...where,
-          category: 'MARKETING',
+          category: 'OFFLINE',
         },
         _sum: {
           amount: true,
@@ -39,12 +39,12 @@ export const getDashboard = async (month: string) => {
       })
     )?._sum?.amount,
   )
-  const paidTrafficTotal = Number(
+  const onlineTotal = Number(
     (
       await db.transaction.aggregate({
         where: {
           ...where,
-          category: 'PAID_TRAFFIC',
+          category: 'ONLINE',
         },
         _sum: {
           amount: true,
@@ -56,11 +56,11 @@ export const getDashboard = async (month: string) => {
 
   /* Percentages Pie Chart */
   const typesPercentage: TransactionPercentagePerCategory = {
-    [TransactionCategory.MARKETING]: Math.round(
-      (Number(marketingTotal || 0) / Number(investmentTotal)) * 100,
+    [TransactionCategory.OFFLINE]: Math.round(
+      (Number(offlineTotal || 0) / Number(investmentTotal)) * 100,
     ),
-    [TransactionCategory.PAID_TRAFFIC]: Math.round(
-      (Number(paidTrafficTotal || 0) / Number(investmentTotal)) * 100,
+    [TransactionCategory.ONLINE]: Math.round(
+      (Number(onlineTotal || 0) / Number(investmentTotal)) * 100,
     ),
   }
   /* Percentages Pie Chart */
@@ -85,8 +85,8 @@ export const getDashboard = async (month: string) => {
 
   return {
     investmentTotal,
-    marketingTotal,
-    paidTrafficTotal,
+    offlineTotal,
+    onlineTotal,
     typesPercentage,
     totalInvestedPerPlatform,
   }

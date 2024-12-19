@@ -5,10 +5,10 @@ import { ColumnDef } from '@tanstack/react-table'
 import { TrashIcon } from 'lucide-react'
 
 import { Button } from '@/app/_components/ui/button'
-import { TRANSACTION_CATEGORY_LABELS } from '@/app/_constants/transactions'
+import { TRANSACTION_PLATFORM_LABELS } from '@/app/_constants/transactions'
 
 import EditTransactionButton from '../_components/edit-transaction-button'
-import TransactionPlatformBadge from '../_components/platform-badge'
+import TransactionCategoryBadge from '../_components/platform-badge'
 
 export const transactionColumns: ColumnDef<Transaction>[] = [
   {
@@ -18,15 +18,15 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
   {
     accessorKey: 'category',
     header: 'Categoria',
-    cell: ({ row: { original: transaction } }) =>
-      TRANSACTION_CATEGORY_LABELS[transaction.category],
+    cell: ({ row: { original: transaction } }) => (
+      <TransactionCategoryBadge transaction={transaction} />
+    ),
   },
   {
     accessorKey: 'platform',
     header: 'Plataforma',
-    cell: ({ row: { original: transaction } }) => (
-      <TransactionPlatformBadge transaction={transaction} />
-    ),
+    cell: ({ row: { original: transaction } }) =>
+      TRANSACTION_PLATFORM_LABELS[transaction.platform],
   },
   {
     accessorKey: 'date',

@@ -1,38 +1,58 @@
 import { TransactionCategory, TransactionPlatform } from '@prisma/client'
 
 export const TRANSACTION_CATEGORY_LABELS = {
-  MARKETING: 'Marketing',
-  PAID_TRAFFIC: 'Tráfego Pago',
+  OFFLINE: 'Offline',
+  ONLINE: 'Online',
 }
 
 export const TRANSACTION_PLATFORM_LABELS = {
-  FACEBOOK: 'Facebook',
-  INSTAGRAM: 'Instagram',
-  WEB: 'Web',
+  SITE: 'Website',
+  EMAIL_MARKETING: 'Email Marketing',
+  SOCIAL_MEDIA: 'Redes Sociais',
+  ECOMMERCE: 'E-commerce',
+  PHYSICAL_STORE: 'Loja Física',
+  OUTDOOR: 'Outdoor',
+  TELEVISION: 'Televisão',
 }
 
 export const TRANSACTION_CATEGORY_OPTIONS = [
   {
-    value: TransactionCategory.MARKETING,
-    label: TRANSACTION_CATEGORY_LABELS.MARKETING,
+    value: TransactionCategory.OFFLINE,
+    label: TRANSACTION_CATEGORY_LABELS.OFFLINE,
   },
   {
-    value: TransactionCategory.PAID_TRAFFIC,
-    label: TRANSACTION_CATEGORY_LABELS.PAID_TRAFFIC,
+    value: TransactionCategory.ONLINE,
+    label: TRANSACTION_CATEGORY_LABELS.ONLINE,
   },
 ]
 
 export const TRANSACTION_PLATFORM_OPTIONS = [
   {
-    value: TransactionPlatform.FACEBOOK,
-    label: TRANSACTION_PLATFORM_LABELS[TransactionPlatform.FACEBOOK],
+    value: TransactionPlatform.SITE,
+    label: TRANSACTION_PLATFORM_LABELS[TransactionPlatform.SITE],
   },
   {
-    value: TransactionPlatform.INSTAGRAM,
-    label: TRANSACTION_PLATFORM_LABELS[TransactionPlatform.INSTAGRAM],
+    value: TransactionPlatform.EMAIL_MARKETING,
+    label: TRANSACTION_PLATFORM_LABELS[TransactionPlatform.EMAIL_MARKETING],
   },
   {
-    value: TransactionPlatform.WEB,
-    label: TRANSACTION_PLATFORM_LABELS[TransactionPlatform.WEB],
+    value: TransactionPlatform.SOCIAL_MEDIA,
+    label: TRANSACTION_PLATFORM_LABELS[TransactionPlatform.SOCIAL_MEDIA],
+  },
+  {
+    value: TransactionPlatform.ECOMMERCE,
+    label: TRANSACTION_PLATFORM_LABELS[TransactionPlatform.ECOMMERCE],
+  },
+  {
+    value: TransactionPlatform.PHYSICAL_STORE,
+    label: TRANSACTION_PLATFORM_LABELS[TransactionPlatform.PHYSICAL_STORE],
+  },
+  {
+    value: TransactionPlatform.OUTDOOR,
+    label: TRANSACTION_PLATFORM_LABELS[TransactionPlatform.OUTDOOR],
+  },
+  {
+    value: TransactionPlatform.TELEVISION,
+    label: TRANSACTION_PLATFORM_LABELS[TransactionPlatform.TELEVISION],
   },
 ]

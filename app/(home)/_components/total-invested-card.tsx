@@ -7,14 +7,14 @@ import PercentageItem from './percentage-item'
 interface TotalInvestedCardProps {
   month: string
   investmentTotal: number
-  marketingTotal: number
-  paidTrafficTotal: number
+  offlineTotal: number
+  onlineTotal: number
 }
 
 const TotalInvestedCard = async ({
   investmentTotal,
-  marketingTotal,
-  paidTrafficTotal,
+  offlineTotal,
+  onlineTotal,
 }: TotalInvestedCardProps) => {
   return (
     <div className="space-y-6">
@@ -30,13 +30,13 @@ const TotalInvestedCard = async ({
           />
           <PercentageItem
             icon={<MapPinnedIcon size={16} />}
-            title="Marketing"
-            amount={marketingTotal}
+            title="Offline"
+            amount={offlineTotal}
           />
           <PercentageItem
             icon={<TrafficConeIcon size={16} />}
-            title="Tráfego Pago"
-            amount={paidTrafficTotal}
+            title="Online"
+            amount={onlineTotal}
           />
         </CardContent>
       </Card>

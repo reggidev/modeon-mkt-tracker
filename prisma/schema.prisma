@@ -26,12 +26,16 @@ model Transaction {
 }
 
 enum TransactionPlatform {
-  INSTAGRAM
-  FACEBOOK
-  WEB
+  SITE
+  EMAIL_MARKETING
+  SOCIAL_MEDIA
+  ECOMMERCE
+  PHYSICAL_STORE
+  OUTDOOR
+  TELEVISION
 }
 
 enum TransactionCategory {
-  MARKETING
-  PAID_TRAFFIC
+  OFFLINE
+  ONLINE
 }

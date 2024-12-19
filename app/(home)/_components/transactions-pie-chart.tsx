@@ -16,36 +16,36 @@ import type { TransactionPercentagePerCategory } from '@/app/_data/get-dashboard
 import PieChartPercentageItem from './pie-chart-percentage-item'
 
 const chartConfig = {
-  [TransactionCategory.MARKETING]: {
-    label: 'Marketing',
+  [TransactionCategory.OFFLINE]: {
+    label: 'Offline',
     color: 'hsl(var(--chart-1))',
   },
-  [TransactionCategory.PAID_TRAFFIC]: {
-    label: 'Tráfego Pago',
+  [TransactionCategory.ONLINE]: {
+    label: 'Online',
     color: 'hsl(var(--chart-4))',
   },
 } satisfies ChartConfig
 
 interface TransactionsPieChartProps {
-  marketingTotal: number
-  paidTrafficTotal: number
+  offlineTotal: number
+  onlineTotal: number
   typesPercentage: TransactionPercentagePerCategory
 }
 
 const TransactionsPieChart = ({
-  marketingTotal,
-  paidTrafficTotal,
+  offlineTotal,
+  onlineTotal,
   typesPercentage,
 }: TransactionsPieChartProps) => {
   const chartData = [
     {
-      type: TransactionCategory.MARKETING,
-      amount: marketingTotal,
+      type: TransactionCategory.OFFLINE,
+      amount: offlineTotal,
       fill: 'hsl(var(--chart-1))',
     },
     {
-      type: TransactionCategory.PAID_TRAFFIC,
-      amount: paidTrafficTotal,
+      type: TransactionCategory.ONLINE,
+      amount: onlineTotal,
       fill: 'hsl(var(--chart-4))',
     },
   ]
@@ -76,8 +76,8 @@ const TransactionsPieChart = ({
             icon={
               <MapPinnedIcon size={16} className="text-[hsl(var(--chart-1))]" />
             }
-            title="Marketing"
-            percentage={typesPercentage[TransactionCategory.MARKETING]}
+            title="Offline"
+            percentage={typesPercentage[TransactionCategory.OFFLINE]}
           />
           <PieChartPercentageItem
             icon={
@@ -86,8 +86,8 @@ const TransactionsPieChart = ({
                 className="text-[hsl(var(--chart-4))]"
               />
             }
-            title="Tráfego Pago"
-            percentage={typesPercentage[TransactionCategory.PAID_TRAFFIC]}
+            title="Online"
+            percentage={typesPercentage[TransactionCategory.ONLINE]}
           />
         </div>
       </CardContent>
