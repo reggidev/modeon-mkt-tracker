@@ -56,7 +56,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenu>
             {data.navMain.map((item) => (
               <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton className="py-4" asChild>
+                <SidebarMenuButton className="py-6" asChild>
                   <Link
                     href={item.url}
                     className={`font-medium ${pathname === item.url ? 'bg-muted-foreground/15' : ''}`}
