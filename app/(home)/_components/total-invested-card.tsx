@@ -10,10 +10,22 @@ import { db } from '@/app/_lib/prisma'
 
 import PercentageItem from './percentage-item'
 
-const TotalInvestedCard = async () => {
+interface TotalInvestedCardProps {
+  month: string
+}
+
+const TotalInvestedCard = async ({ month }: TotalInvestedCardProps) => {
+  const where = {
+    date: {
+      gte: new Date(`2024-${month}-01`),
+      lt: new Date(`2024-${month}-31`),
+    },
+  }
+
   const investmentTotal = Number(
     (
       await db.transaction.aggregate({
+        where,
         _sum: {
           amount: true,
         },
@@ -24,6 +36,7 @@ const TotalInvestedCard = async () => {
     (
       await db.transaction.aggregate({
         where: {
+          ...where,
           category: 'MARKETING',
         },
         _sum: {
@@ -36,6 +49,7 @@ const TotalInvestedCard = async () => {
     (
       await db.transaction.aggregate({
         where: {
+          ...where,
           category: 'PAID_TRAFFIC',
         },
         _sum: {

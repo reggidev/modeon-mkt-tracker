@@ -10,12 +10,24 @@ import { db } from '@/app/_lib/prisma'
 
 import PercentageItem from './percentage-item'
 
-const MediaInvestedCard = async () => {
+interface MediaInvestedCardProps {
+  month: string
+}
+
+const MediaInvestedCard = async ({ month }: MediaInvestedCardProps) => {
   // TODO: Adicionar Google Ads total
+  const where = {
+    date: {
+      gte: new Date(`2024-${month}-01`),
+      lt: new Date(`2024-${month}-31`),
+    },
+  }
+
   const facebookTotal = Number(
     (
       await db.transaction.aggregate({
         where: {
+          ...where,
           platform: 'FACEBOOK',
         },
         _sum: {
@@ -28,6 +40,7 @@ const MediaInvestedCard = async () => {
     (
       await db.transaction.aggregate({
         where: {
+          ...where,
           platform: 'INSTAGRAM',
         },
         _sum: {
@@ -40,6 +53,7 @@ const MediaInvestedCard = async () => {
     (
       await db.transaction.aggregate({
         where: {
+          ...where,
           platform: 'WEB',
         },
         _sum: {
