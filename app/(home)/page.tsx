@@ -3,9 +3,10 @@ import { isMatch } from 'date-fns'
 import { redirect } from 'next/navigation'
 
 import Header from '../_components/header'
-import MediaInvestedCard from './_components/media-invested-card'
+import { getDashboard } from '../_data/get-dashboard'
 import TimeSelect from './_components/time-select'
 import TotalInvestedCard from './_components/total-invested-card'
+import TransactionPieChart from './_components/transactions-pie-chart'
 
 interface HomeProps {
   searchParams: {
@@ -18,11 +19,11 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
   if (!userId) {
     redirect('/login')
   }
-
   const monthIsInvalid = !month || !isMatch(month, 'MM')
   if (monthIsInvalid) {
     redirect('?month=01')
   }
+  const dashboard = await getDashboard(month)
 
   return (
     <>
@@ -38,8 +39,8 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
           <TimeSelect />
         </div>
         <div className="grid grid-cols-3 gap-6">
-          <TotalInvestedCard month={month} />
-          <MediaInvestedCard month={month} />
+          <TotalInvestedCard month={month} {...dashboard} />
+          <TransactionPieChart {...dashboard} />
         </div>
       </div>
     </>

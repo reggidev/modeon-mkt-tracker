@@ -6,59 +6,21 @@ import {
 } from 'lucide-react'
 
 import { Card, CardContent, CardHeader } from '@/app/_components/ui/card'
-import { db } from '@/app/_lib/prisma'
 
 import PercentageItem from './percentage-item'
 
 interface TotalInvestedCardProps {
   month: string
+  investmentTotal: number
+  marketingTotal: number
+  paidTrafficTotal: number
 }
 
-const TotalInvestedCard = async ({ month }: TotalInvestedCardProps) => {
-  const where = {
-    date: {
-      gte: new Date(`2024-${month}-01`),
-      lt: new Date(`2024-${month}-31`),
-    },
-  }
-
-  const investmentTotal = Number(
-    (
-      await db.transaction.aggregate({
-        where,
-        _sum: {
-          amount: true,
-        },
-      })
-    )?._sum?.amount,
-  )
-  const marketingTotal = Number(
-    (
-      await db.transaction.aggregate({
-        where: {
-          ...where,
-          category: 'MARKETING',
-        },
-        _sum: {
-          amount: true,
-        },
-      })
-    )?._sum?.amount,
-  )
-  const paidTrafficTotal = Number(
-    (
-      await db.transaction.aggregate({
-        where: {
-          ...where,
-          category: 'PAID_TRAFFIC',
-        },
-        _sum: {
-          amount: true,
-        },
-      })
-    )?._sum?.amount,
-  )
-
+const TotalInvestedCard = async ({
+  investmentTotal,
+  marketingTotal,
+  paidTrafficTotal,
+}: TotalInvestedCardProps) => {
   return (
     <div className="space-y-6">
       <Card>
