@@ -18,7 +18,7 @@ const TotalInvestedCard = async ({
 }: TotalInvestedCardProps) => {
   return (
     <div className="space-y-6">
-      <Card>
+      <Card className="max-h-[360px] min-h-[360px]">
         <CardHeader className="flex-row items-center gap-2">
           <p className="text-2xl font-bold">Investimento</p>
         </CardHeader>
