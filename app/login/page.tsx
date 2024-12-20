@@ -13,22 +13,22 @@ const LoginPage = async () => {
   }
 
   return (
-    <div className="grid h-screen items-center justify-center">
-      <div className="mx-auto flex h-full max-w-[500px] flex-col justify-center p-8">
+    <div className="grid h-screen items-center justify-center bg-background">
+      <div className="flex max-w-[500px] flex-col items-center justify-center rounded-xl border border-white/20 bg-accent p-8 shadow-lg backdrop-blur-lg">
         <Image
           src="/logo.png"
-          width={434}
+          width={380}
           height={74}
           alt="ModeON"
           className="mb-8"
         />
         <h1 className="mb-3 text-4xl font-bold">Bem-vindo</h1>
-        <p className="mb-8 text-muted-foreground">
+        <p className="mb-8 text-center text-muted-foreground">
           O ModeON Marketing Tracker é uma plataforma de gestão financeira para
           monitorar suas movimentações facilitando o controle do orçamento.
         </p>
         <SignInButton>
-          <Button variant="outline">
+          <Button variant="outline" className="hover:bg-primary/10">
             <LogInIcon />
             Fazer login ou criar conta
           </Button>
