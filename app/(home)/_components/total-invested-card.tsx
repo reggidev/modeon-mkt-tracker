@@ -1,6 +1,7 @@
 import { CoinsIcon, MapPinnedIcon, TrafficConeIcon } from 'lucide-react'
 
 import { Card, CardContent, CardHeader } from '@/app/_components/ui/card'
+import { Separator } from '@/app/_components/ui/separator'
 
 import PercentageItem from './percentage-item'
 
@@ -28,6 +29,7 @@ const TotalInvestedCard = async ({
             title="Total"
             amount={investmentTotal}
           />
+          <Separator />
           <PercentageItem
             icon={<MapPinnedIcon size={16} />}
             title="Offline"
