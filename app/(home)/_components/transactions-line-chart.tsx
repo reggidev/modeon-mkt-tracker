@@ -1,5 +1,6 @@
 'use client'
 
+import { TransactionCategory } from '@prisma/client'
 import * as React from 'react'
 import { CartesianGrid, Line, LineChart, XAxis } from 'recharts'
 
@@ -18,121 +19,121 @@ import {
 } from '@/app/_components/ui/chart'
 
 const chartData = [
-  { date: '2024-04-01', online: 222, offline: 150 },
-  { date: '2024-04-02', online: 97, offline: 180 },
-  { date: '2024-04-03', online: 167, offline: 120 },
-  { date: '2024-04-04', online: 242, offline: 260 },
-  { date: '2024-04-05', online: 373, offline: 290 },
-  { date: '2024-04-06', online: 301, offline: 340 },
-  { date: '2024-04-07', online: 245, offline: 180 },
-  { date: '2024-04-08', online: 409, offline: 320 },
-  { date: '2024-04-09', online: 59, offline: 110 },
-  { date: '2024-04-10', online: 261, offline: 190 },
-  { date: '2024-04-11', online: 327, offline: 350 },
-  { date: '2024-04-12', online: 292, offline: 210 },
-  { date: '2024-04-13', online: 342, offline: 380 },
-  { date: '2024-04-14', online: 137, offline: 220 },
-  { date: '2024-04-15', online: 120, offline: 170 },
-  { date: '2024-04-16', online: 138, offline: 190 },
-  { date: '2024-04-17', online: 446, offline: 360 },
-  { date: '2024-04-18', online: 364, offline: 410 },
-  { date: '2024-04-19', online: 243, offline: 180 },
-  { date: '2024-04-20', online: 89, offline: 150 },
-  { date: '2024-04-21', online: 137, offline: 200 },
-  { date: '2024-04-22', online: 224, offline: 170 },
-  { date: '2024-04-23', online: 138, offline: 230 },
-  { date: '2024-04-24', online: 387, offline: 290 },
-  { date: '2024-04-25', online: 215, offline: 250 },
-  { date: '2024-04-26', online: 75, offline: 130 },
-  { date: '2024-04-27', online: 383, offline: 420 },
-  { date: '2024-04-28', online: 122, offline: 180 },
-  { date: '2024-04-29', online: 315, offline: 240 },
-  { date: '2024-04-30', online: 454, offline: 380 },
-  { date: '2024-05-01', online: 165, offline: 220 },
-  { date: '2024-05-02', online: 293, offline: 310 },
-  { date: '2024-05-03', online: 247, offline: 190 },
-  { date: '2024-05-04', online: 385, offline: 420 },
-  { date: '2024-05-05', online: 481, offline: 390 },
-  { date: '2024-05-06', online: 498, offline: 520 },
-  { date: '2024-05-07', online: 388, offline: 300 },
-  { date: '2024-05-08', online: 149, offline: 210 },
-  { date: '2024-05-09', online: 227, offline: 180 },
-  { date: '2024-05-10', online: 293, offline: 330 },
-  { date: '2024-05-11', online: 335, offline: 270 },
-  { date: '2024-05-12', online: 197, offline: 240 },
-  { date: '2024-05-13', online: 197, offline: 160 },
-  { date: '2024-05-14', online: 448, offline: 490 },
-  { date: '2024-05-15', online: 473, offline: 380 },
-  { date: '2024-05-16', online: 338, offline: 400 },
-  { date: '2024-05-17', online: 499, offline: 420 },
-  { date: '2024-05-18', online: 315, offline: 350 },
-  { date: '2024-05-19', online: 235, offline: 180 },
-  { date: '2024-05-20', online: 177, offline: 230 },
-  { date: '2024-05-21', online: 82, offline: 140 },
-  { date: '2024-05-22', online: 81, offline: 120 },
-  { date: '2024-05-23', online: 252, offline: 290 },
-  { date: '2024-05-24', online: 294, offline: 220 },
-  { date: '2024-05-25', online: 201, offline: 250 },
-  { date: '2024-05-26', online: 213, offline: 170 },
-  { date: '2024-05-27', online: 420, offline: 460 },
-  { date: '2024-05-28', online: 233, offline: 190 },
-  { date: '2024-05-29', online: 78, offline: 130 },
-  { date: '2024-05-30', online: 340, offline: 280 },
-  { date: '2024-05-31', online: 178, offline: 230 },
-  { date: '2024-06-01', online: 178, offline: 200 },
-  { date: '2024-06-02', online: 470, offline: 410 },
-  { date: '2024-06-03', online: 103, offline: 160 },
-  { date: '2024-06-04', online: 439, offline: 380 },
-  { date: '2024-06-05', online: 88, offline: 140 },
-  { date: '2024-06-06', online: 294, offline: 250 },
-  { date: '2024-06-07', online: 323, offline: 370 },
-  { date: '2024-06-08', online: 385, offline: 320 },
-  { date: '2024-06-09', online: 438, offline: 480 },
-  { date: '2024-06-10', online: 155, offline: 200 },
-  { date: '2024-06-11', online: 92, offline: 150 },
-  { date: '2024-06-12', online: 492, offline: 420 },
-  { date: '2024-06-13', online: 81, offline: 130 },
-  { date: '2024-06-14', online: 426, offline: 380 },
-  { date: '2024-06-15', online: 307, offline: 350 },
-  { date: '2024-06-16', online: 371, offline: 310 },
-  { date: '2024-06-17', online: 475, offline: 520 },
-  { date: '2024-06-18', online: 107, offline: 170 },
-  { date: '2024-06-19', online: 341, offline: 290 },
-  { date: '2024-06-20', online: 408, offline: 450 },
-  { date: '2024-06-21', online: 169, offline: 210 },
-  { date: '2024-06-22', online: 317, offline: 270 },
-  { date: '2024-06-23', online: 480, offline: 530 },
-  { date: '2024-06-24', online: 132, offline: 180 },
-  { date: '2024-06-25', online: 141, offline: 190 },
-  { date: '2024-06-26', online: 434, offline: 380 },
-  { date: '2024-06-27', online: 448, offline: 490 },
-  { date: '2024-06-28', online: 149, offline: 200 },
-  { date: '2024-06-29', online: 103, offline: 160 },
-  { date: '2024-06-30', online: 446, offline: 400 },
+  { date: '2024-04-01', ONLINE: 222, OFFLINE: 150 },
+  { date: '2024-04-02', ONLINE: 97, OFFLINE: 180 },
+  { date: '2024-04-03', ONLINE: 167, OFFLINE: 120 },
+  { date: '2024-04-04', ONLINE: 242, OFFLINE: 260 },
+  { date: '2024-04-05', ONLINE: 373, OFFLINE: 290 },
+  { date: '2024-04-06', ONLINE: 301, OFFLINE: 340 },
+  { date: '2024-04-07', ONLINE: 245, OFFLINE: 180 },
+  { date: '2024-04-08', ONLINE: 409, OFFLINE: 320 },
+  { date: '2024-04-09', ONLINE: 59, OFFLINE: 110 },
+  { date: '2024-04-10', ONLINE: 261, OFFLINE: 190 },
+  { date: '2024-04-11', ONLINE: 327, OFFLINE: 350 },
+  { date: '2024-04-12', ONLINE: 292, OFFLINE: 210 },
+  { date: '2024-04-13', ONLINE: 342, OFFLINE: 380 },
+  { date: '2024-04-14', ONLINE: 137, OFFLINE: 220 },
+  { date: '2024-04-15', ONLINE: 120, OFFLINE: 170 },
+  { date: '2024-04-16', ONLINE: 138, OFFLINE: 190 },
+  { date: '2024-04-17', ONLINE: 446, OFFLINE: 360 },
+  { date: '2024-04-18', ONLINE: 364, OFFLINE: 410 },
+  { date: '2024-04-19', ONLINE: 243, OFFLINE: 180 },
+  { date: '2024-04-20', ONLINE: 89, OFFLINE: 150 },
+  { date: '2024-04-21', ONLINE: 137, OFFLINE: 200 },
+  { date: '2024-04-22', ONLINE: 224, OFFLINE: 170 },
+  { date: '2024-04-23', ONLINE: 138, OFFLINE: 230 },
+  { date: '2024-04-24', ONLINE: 387, OFFLINE: 290 },
+  { date: '2024-04-25', ONLINE: 215, OFFLINE: 250 },
+  { date: '2024-04-26', ONLINE: 75, OFFLINE: 130 },
+  { date: '2024-04-27', ONLINE: 383, OFFLINE: 420 },
+  { date: '2024-04-28', ONLINE: 122, OFFLINE: 180 },
+  { date: '2024-04-29', ONLINE: 315, OFFLINE: 240 },
+  { date: '2024-04-30', ONLINE: 454, OFFLINE: 380 },
+  { date: '2024-05-01', ONLINE: 165, OFFLINE: 220 },
+  { date: '2024-05-02', ONLINE: 293, OFFLINE: 310 },
+  { date: '2024-05-03', ONLINE: 247, OFFLINE: 190 },
+  { date: '2024-05-04', ONLINE: 385, OFFLINE: 420 },
+  { date: '2024-05-05', ONLINE: 481, OFFLINE: 390 },
+  { date: '2024-05-06', ONLINE: 498, OFFLINE: 520 },
+  { date: '2024-05-07', ONLINE: 388, OFFLINE: 300 },
+  { date: '2024-05-08', ONLINE: 149, OFFLINE: 210 },
+  { date: '2024-05-09', ONLINE: 227, OFFLINE: 180 },
+  { date: '2024-05-10', ONLINE: 293, OFFLINE: 330 },
+  { date: '2024-05-11', ONLINE: 335, OFFLINE: 270 },
+  { date: '2024-05-12', ONLINE: 197, OFFLINE: 240 },
+  { date: '2024-05-13', ONLINE: 197, OFFLINE: 160 },
+  { date: '2024-05-14', ONLINE: 448, OFFLINE: 490 },
+  { date: '2024-05-15', ONLINE: 473, OFFLINE: 380 },
+  { date: '2024-05-16', ONLINE: 338, OFFLINE: 400 },
+  { date: '2024-05-17', ONLINE: 499, OFFLINE: 420 },
+  { date: '2024-05-18', ONLINE: 315, OFFLINE: 350 },
+  { date: '2024-05-19', ONLINE: 235, OFFLINE: 180 },
+  { date: '2024-05-20', ONLINE: 177, OFFLINE: 230 },
+  { date: '2024-05-21', ONLINE: 82, OFFLINE: 140 },
+  { date: '2024-05-22', ONLINE: 81, OFFLINE: 120 },
+  { date: '2024-05-23', ONLINE: 252, OFFLINE: 290 },
+  { date: '2024-05-24', ONLINE: 294, OFFLINE: 220 },
+  { date: '2024-05-25', ONLINE: 201, OFFLINE: 250 },
+  { date: '2024-05-26', ONLINE: 213, OFFLINE: 170 },
+  { date: '2024-05-27', ONLINE: 420, OFFLINE: 460 },
+  { date: '2024-05-28', ONLINE: 233, OFFLINE: 190 },
+  { date: '2024-05-29', ONLINE: 78, OFFLINE: 130 },
+  { date: '2024-05-30', ONLINE: 340, OFFLINE: 280 },
+  { date: '2024-05-31', ONLINE: 178, OFFLINE: 230 },
+  { date: '2024-06-01', ONLINE: 178, OFFLINE: 200 },
+  { date: '2024-06-02', ONLINE: 470, OFFLINE: 410 },
+  { date: '2024-06-03', ONLINE: 103, OFFLINE: 160 },
+  { date: '2024-06-04', ONLINE: 439, OFFLINE: 380 },
+  { date: '2024-06-05', ONLINE: 88, OFFLINE: 140 },
+  { date: '2024-06-06', ONLINE: 294, OFFLINE: 250 },
+  { date: '2024-06-07', ONLINE: 323, OFFLINE: 370 },
+  { date: '2024-06-08', ONLINE: 385, OFFLINE: 320 },
+  { date: '2024-06-09', ONLINE: 438, OFFLINE: 480 },
+  { date: '2024-06-10', ONLINE: 155, OFFLINE: 200 },
+  { date: '2024-06-11', ONLINE: 92, OFFLINE: 150 },
+  { date: '2024-06-12', ONLINE: 492, OFFLINE: 420 },
+  { date: '2024-06-13', ONLINE: 81, OFFLINE: 130 },
+  { date: '2024-06-14', ONLINE: 426, OFFLINE: 380 },
+  { date: '2024-06-15', ONLINE: 307, OFFLINE: 350 },
+  { date: '2024-06-16', ONLINE: 371, OFFLINE: 310 },
+  { date: '2024-06-17', ONLINE: 475, OFFLINE: 520 },
+  { date: '2024-06-18', ONLINE: 107, OFFLINE: 170 },
+  { date: '2024-06-19', ONLINE: 341, OFFLINE: 290 },
+  { date: '2024-06-20', ONLINE: 408, OFFLINE: 450 },
+  { date: '2024-06-21', ONLINE: 169, OFFLINE: 210 },
+  { date: '2024-06-22', ONLINE: 317, OFFLINE: 270 },
+  { date: '2024-06-23', ONLINE: 480, OFFLINE: 530 },
+  { date: '2024-06-24', ONLINE: 132, OFFLINE: 180 },
+  { date: '2024-06-25', ONLINE: 141, OFFLINE: 190 },
+  { date: '2024-06-26', ONLINE: 434, OFFLINE: 380 },
+  { date: '2024-06-27', ONLINE: 448, OFFLINE: 490 },
+  { date: '2024-06-28', ONLINE: 149, OFFLINE: 200 },
+  { date: '2024-06-29', ONLINE: 103, OFFLINE: 160 },
+  { date: '2024-06-30', ONLINE: 446, OFFLINE: 400 },
 ]
 
 const chartConfig = {
   views: {
     label: 'Page Views',
   },
-  online: {
-    label: 'Online',
+  [TransactionCategory.OFFLINE]: {
+    label: 'Offline',
     color: 'hsl(var(--chart-1))',
   },
-  offline: {
-    label: 'Offline',
+  [TransactionCategory.ONLINE]: {
+    label: 'Online',
     color: 'hsl(var(--chart-4))',
   },
 } satisfies ChartConfig
 
 const TransactionsLineChart = () => {
   const [activeChart, setActiveChart] =
-    React.useState<keyof typeof chartConfig>('online')
+    React.useState<keyof typeof chartConfig>('ONLINE')
 
   const total = React.useMemo(
     () => ({
-      online: chartData.reduce((acc, curr) => acc + curr.online, 0),
-      offline: chartData.reduce((acc, curr) => acc + curr.offline, 0),
+      ONLINE: chartData.reduce((acc, curr) => acc + curr.ONLINE, 0),
+      OFFLINE: chartData.reduce((acc, curr) => acc + curr.OFFLINE, 0),
     }),
     [],
   )
@@ -147,7 +148,7 @@ const TransactionsLineChart = () => {
           </CardDescription>
         </div>
         <div className="flex">
-          {['online', 'offline'].map((key) => {
+          {['ONLINE', 'OFFLINE'].map((key) => {
             const chart = key as keyof typeof chartConfig
             return (
               <button
@@ -189,7 +190,7 @@ const TransactionsLineChart = () => {
               minTickGap={32}
               tickFormatter={(value) => {
                 const date = new Date(value)
-                return date.toLocaleDateString('en-US', {
+                return date.toLocaleDateString('pt-BR', {
                   month: 'short',
                   day: 'numeric',
                 })
@@ -201,7 +202,7 @@ const TransactionsLineChart = () => {
                   className="w-[150px]"
                   nameKey="views"
                   labelFormatter={(value) => {
-                    return new Date(value).toLocaleDateString('en-US', {
+                    return new Date(value).toLocaleDateString('pt-BR', {
                       month: 'short',
                       day: 'numeric',
                       year: 'numeric',
