@@ -2,11 +2,10 @@
 
 import { type Transaction } from '@prisma/client'
 import { ColumnDef } from '@tanstack/react-table'
-import { TrashIcon } from 'lucide-react'
 
-import { Button } from '@/app/_components/ui/button'
 import { TRANSACTION_PLATFORM_LABELS } from '@/app/_constants/transactions'
 
+import DeleteTransactionButton from '../_components/delete-transaction-button'
 import EditTransactionButton from '../_components/edit-transaction-button'
 import TransactionCategoryBadge from '../_components/platform-badge'
 
@@ -54,9 +53,7 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
       return (
         <div className="space-x-2">
           <EditTransactionButton transaction={transaction} />
-          <Button variant="outline" size="icon">
-            <TrashIcon />
-          </Button>
+          <DeleteTransactionButton transactionId={transaction.id} />
         </div>
       )
     },

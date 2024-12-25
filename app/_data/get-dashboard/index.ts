@@ -82,7 +82,6 @@ export const getDashboard = async (month: string) => {
     ),
   }))
   /* Percentages per Platform (Component) */
-
   return {
     investmentTotal,
     offlineTotal,

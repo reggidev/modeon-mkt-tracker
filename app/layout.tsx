@@ -4,6 +4,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 import { dark } from '@clerk/themes'
 import type { Metadata } from 'next'
 import { Mulish } from 'next/font/google'
+import { Toaster } from 'sonner'
 
 import { ThemeProvider } from './_components/theme-provider'
 
@@ -37,6 +38,7 @@ export default function RootLayout({
           >
             <main>{children}</main>
           </ThemeProvider>
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>
