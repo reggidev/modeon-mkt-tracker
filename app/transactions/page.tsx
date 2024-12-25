@@ -8,12 +8,19 @@ import { db } from '../_lib/prisma'
 import { transactionColumns } from './_columns'
 
 const TransactionsPage = async () => {
-  const transactions = await db.transaction.findMany({})
-
   const { userId } = await auth()
   if (!userId) {
     redirect('/login')
   }
+
+  const transactions = await db.transaction.findMany({
+    where: {
+      userId,
+    },
+    orderBy: {
+      date: 'desc',
+    },
+  })
 
   return (
     <>
@@ -28,7 +35,10 @@ const TransactionsPage = async () => {
           </div>
           <AddTransactionButton />
         </div>
-        <DataTable columns={transactionColumns} data={transactions} />
+        <DataTable
+          columns={transactionColumns}
+          data={JSON.parse(JSON.stringify(transactions))}
+        />
       </div>
     </>
   )
