@@ -81,7 +81,7 @@ const UpsertTransactionDialog = ({
     defaultValues: defaultValues ?? {
       name: '',
       amount: 10,
-      category: TransactionCategory.OFFLINE,
+      category: TransactionCategory.ONLINE,
       platform: TransactionPlatform.SOCIAL_MEDIA,
       date: new Date(),
     },
