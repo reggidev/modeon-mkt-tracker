@@ -2,6 +2,7 @@ import { auth } from '@clerk/nextjs/server'
 import { isMatch } from 'date-fns'
 import { redirect } from 'next/navigation'
 
+import AddTransactionButton from '../_components/add-transaction-button'
 import Header from '../_components/header'
 import { getDashboard } from '../_data/get-dashboard'
 import InvestedPerPlatform from './_components/invested-per-platform'
@@ -41,7 +42,10 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
               Aqui você obtém uma visão geral do investimento
             </p>
           </div>
-          <TimeSelect />
+          <div className="flex items-center gap-3">
+            <TimeSelect />
+            <AddTransactionButton />
+          </div>
         </div>
         <div className="grid grid-cols-3 gap-6">
           <TotalInvestedCard month={month} {...dashboard} />
