@@ -25,12 +25,6 @@ const TotalInvestedCard = async ({
         </CardHeader>
         <CardContent className="space-y-3">
           <PercentageItem
-            icon={<CoinsIcon size={16} />}
-            title="Total"
-            amount={investmentTotal}
-          />
-          <Separator />
-          <PercentageItem
             icon={<MapPinnedIcon size={16} />}
             title="Offline"
             amount={offlineTotal}
@@ -39,6 +33,12 @@ const TotalInvestedCard = async ({
             icon={<TrafficConeIcon size={16} />}
             title="Online"
             amount={onlineTotal}
+          />
+          <Separator />
+          <PercentageItem
+            icon={<CoinsIcon size={16} />}
+            title="Total"
+            amount={investmentTotal}
           />
         </CardContent>
       </Card>
