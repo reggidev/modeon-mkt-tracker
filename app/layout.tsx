@@ -37,7 +37,9 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <main>{children}</main>
+            <main className="flex h-full flex-col lg:overflow-hidden">
+              {children}
+            </main>
           </ThemeProvider>
           <Toaster />
         </body>

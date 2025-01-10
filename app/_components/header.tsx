@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="-mt-7 flex justify-end gap-3 px-4 py-2">
+      <header className="-mt-3 flex justify-end gap-3 px-4 py-2">
         <ToggleThemeButton />
         <Button onClick={handleSignOutClick} variant="outline">
           <LogOutIcon size={16} />
