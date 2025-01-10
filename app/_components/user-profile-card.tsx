@@ -30,7 +30,11 @@ const UserProfileCard = ({ isCollapsed }: UserProfileCardProps) => {
         <div>
           <p>{user?.fullName || 'Usuário'}</p>
           <p className="text-sm text-gray-400">
-            {user?.primaryEmailAddress?.emailAddress || 'Sem e-mail'}
+            {user?.primaryEmailAddress?.emailAddress
+              ? user.primaryEmailAddress.emailAddress.length > 20
+                ? `${user.primaryEmailAddress.emailAddress.slice(0, 20)}...`
+                : user.primaryEmailAddress.emailAddress
+              : 'Sem e-mail'}
           </p>
         </div>
       )}
