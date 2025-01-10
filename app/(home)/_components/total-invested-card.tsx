@@ -7,6 +7,7 @@ import PercentageItem from './percentage-item'
 
 interface TotalInvestedCardProps {
   month: string
+  year: string
   investmentTotal: number
   offlineTotal: number
   onlineTotal: number

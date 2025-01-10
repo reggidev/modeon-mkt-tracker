@@ -50,7 +50,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               <Image src="/logo.png" width={250} height={100} alt="ModeON" />
             </Link>
           </SidebarMenuItem>
-          <SidebarSeparator />
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
@@ -58,10 +57,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenu>
             {data.navMain.map((item) => (
               <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton className="py-6" asChild>
+                <SidebarMenuButton className="py-5" asChild>
                   <Link
                     href={item.url}
-                    className={`font-medium ${pathname === item.url ? 'bg-muted-foreground/15' : ''}`}
+                    className={`${pathname === item.url ? 'bg-muted-foreground/15 font-extrabold' : ''}`}
                   >
                     <item.icon />
                     {item.title}
@@ -73,7 +72,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarGroup>
       </SidebarContent>
       <SidebarSeparator />
-      <SidebarFooter className="flex items-center justify-center py-4">
+      <SidebarFooter className="flex items-center justify-center py-2">
         <UserProfileCard isCollapsed={state} />
       </SidebarFooter>
       <SidebarRail />

@@ -6,30 +6,35 @@ import AddTransactionButton from '../_components/add-transaction-button'
 import Header from '../_components/header'
 import { getDashboard } from '../_data/get-dashboard'
 import InvestedPerPlatform from './_components/invested-per-platform'
-import TimeSelect from './_components/time-select'
+import MonthSelect from './_components/month-select'
 import TotalInvestedCard from './_components/total-invested-card'
 import TransactionsLineChart from './_components/transactions-line-chart'
 import TransactionPieChart from './_components/transactions-pie-chart'
+import YearSelect from './_components/year-select'
 
 interface HomeProps {
   searchParams: {
     month: string
+    year: string
   }
 }
 
-const Home = async ({ searchParams: { month } }: HomeProps) => {
+const Home = async ({ searchParams: { month, year } }: HomeProps) => {
   const { userId } = await auth()
   if (!userId) {
     redirect('/login')
   }
 
   const monthIsInvalid = !month || !isMatch(month, 'MM')
-  if (monthIsInvalid) {
+  const yearIsInvalid = !year || !['2024', '2025'].includes(year)
+
+  if (monthIsInvalid || yearIsInvalid) {
     const currentMonth = String(new Date().getMonth() + 1).padStart(2, '0')
-    redirect(`?month=${currentMonth}`)
+    const currentYear = String(new Date().getFullYear())
+    redirect(`?year=${currentYear}&month=${currentMonth}`)
   }
 
-  const dashboard = await getDashboard(month)
+  const dashboard = await getDashboard(month, year)
 
   return (
     <>
@@ -43,12 +48,13 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
             </p>
           </div>
           <div className="flex items-center gap-3">
-            <TimeSelect />
+            <YearSelect />
+            <MonthSelect />
             <AddTransactionButton />
           </div>
         </div>
         <div className="grid grid-cols-3 gap-6">
-          <TotalInvestedCard month={month} {...dashboard} />
+          <TotalInvestedCard month={month} year={year} {...dashboard} />
           <TransactionPieChart {...dashboard} />
           <InvestedPerPlatform
             investedPerPlatform={dashboard.totalInvestedPerPlatform}

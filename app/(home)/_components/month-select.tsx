@@ -25,12 +25,14 @@ const MONTH_OPTIONS = [
   { value: '12', label: 'Dezembro' },
 ]
 
-const TimeSelect = () => {
+const MonthSelect = () => {
   const { push } = useRouter()
   const searchParams = useSearchParams()
   const month = searchParams.get('month')
+  const year = searchParams.get('year') || '2025'
+
   const handleMonthChange = (month: string) => {
-    push(`/?month=${month}`)
+    push(`/?year=${year}&month=${month}`)
   }
 
   return (
@@ -52,4 +54,4 @@ const TimeSelect = () => {
   )
 }
 
-export default TimeSelect
+export default MonthSelect
