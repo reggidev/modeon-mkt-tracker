@@ -2,7 +2,6 @@ import { auth } from '@clerk/nextjs/server'
 import { isMatch } from 'date-fns'
 import { redirect } from 'next/navigation'
 
-import AddTransactionButton from '../_components/add-transaction-button'
 import Header from '../_components/header'
 import { getDashboard } from '../_data/get-dashboard'
 import InvestedPerPlatform from './_components/invested-per-platform'
@@ -40,8 +39,8 @@ const Home = async ({ searchParams: { month, year } }: HomeProps) => {
     <>
       <Header />
       <div className="container mx-auto flex flex-col space-y-6 p-4 pb-20 md:pb-0 lg:overflow-hidden lg:p-6">
-        <div className="flex w-full items-center justify-between">
-          <div className="flex flex-col">
+        <div className="flex w-full flex-col justify-between lg:flex-row lg:items-center">
+          <div className="mb-2 flex flex-col lg:mb-0">
             <h1 className="text-3xl font-bold">Dashboard</h1>
             <p className="text-sm text-muted-foreground">
               Aqui você obtém uma visão geral do investimento
@@ -50,7 +49,6 @@ const Home = async ({ searchParams: { month, year } }: HomeProps) => {
           <div className="flex items-center gap-3">
             <YearSelect />
             <MonthSelect />
-            <AddTransactionButton />
           </div>
         </div>
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[2fr,1fr] lg:overflow-hidden">

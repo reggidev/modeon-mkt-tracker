@@ -6,12 +6,19 @@ import { useState } from 'react'
 import { Button } from './ui/button'
 import UpsertTransactionDialog from './upsert-transaction-dialog'
 
-const AddTransactionButton = () => {
+interface AddTransactionButtonProps {
+  className?: string
+}
+
+const AddTransactionButton = ({ className }: AddTransactionButtonProps) => {
   const [dialogIsOpen, setDialogIsOpen] = useState(false)
 
   return (
     <>
-      <Button className="font-bold" onClick={() => setDialogIsOpen(true)}>
+      <Button
+        className={`font-bold ${className}`}
+        onClick={() => setDialogIsOpen(true)}
+      >
         Adicionar Investimento
         <ArrowDownUpIcon />
       </Button>
