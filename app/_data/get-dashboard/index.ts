@@ -88,11 +88,21 @@ export const getDashboard = async (month: string, year: string) => {
     ),
   }))
   /* Percentages per Platform (Component) */
+
+  /* Last Investments */
+  const lastInvestments = await db.transaction.findMany({
+    where,
+    orderBy: { date: 'desc' },
+    take: 15,
+  })
+  /* Last Investments */
+
   return {
     investmentTotal,
     offlineTotal,
     onlineTotal,
     typesPercentage,
     totalInvestedPerPlatform,
+    lastInvestments,
   }
 }

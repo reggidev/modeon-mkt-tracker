@@ -15,6 +15,16 @@ export const TRANSACTION_PLATFORM_LABELS = {
   TELEVISION: 'Televisão',
 }
 
+export const TRANSACTION_PAYMENT_METHOD_ICONS = {
+  [TransactionPlatform.SITE]: 'website.svg',
+  [TransactionPlatform.EMAIL_MARKETING]: 'mail.svg',
+  [TransactionPlatform.SOCIAL_MEDIA]: 'social-media.svg',
+  [TransactionPlatform.ECOMMERCE]: 'ecommerce.svg',
+  [TransactionPlatform.PHYSICAL_STORE]: 'store.svg',
+  [TransactionPlatform.OUTDOOR]: 'outdoor.svg',
+  [TransactionPlatform.TELEVISION]: 'tv.svg',
+}
+
 export const TRANSACTION_CATEGORY_OPTIONS = [
   {
     value: TransactionCategory.OFFLINE,

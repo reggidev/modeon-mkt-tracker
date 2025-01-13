@@ -6,6 +6,7 @@ import AddTransactionButton from '../_components/add-transaction-button'
 import Header from '../_components/header'
 import { getDashboard } from '../_data/get-dashboard'
 import InvestedPerPlatform from './_components/invested-per-platform'
+import LastInvestments from './_components/last-investments'
 import MonthSelect from './_components/month-select'
 import TotalInvestedCard from './_components/total-invested-card'
 import TransactionPieChart from './_components/transactions-pie-chart'
@@ -52,14 +53,15 @@ const Home = async ({ searchParams: { month, year } }: HomeProps) => {
             <AddTransactionButton />
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-6">
-          <TotalInvestedCard month={month} year={year} {...dashboard} />
-          <TransactionPieChart {...dashboard} />
-        </div>
-        <div className="grid grid-cols-3 gap-6">
-          <InvestedPerPlatform
-            investedPerPlatform={dashboard.totalInvestedPerPlatform}
-          />
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[2fr,1fr] lg:overflow-hidden">
+          <div className="grid grid-cols-2 gap-6 overflow-hidden">
+            <TotalInvestedCard month={month} year={year} {...dashboard} />
+            <TransactionPieChart {...dashboard} />
+            <InvestedPerPlatform
+              investedPerPlatform={dashboard.totalInvestedPerPlatform}
+            />
+          </div>
+          <LastInvestments lastInvestments={dashboard.lastInvestments} />
         </div>
       </div>
     </>
