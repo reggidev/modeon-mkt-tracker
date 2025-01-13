@@ -22,7 +22,7 @@ const TotalInvestedCard = async ({
     <div className="space-y-6">
       <Card className="max-h-[360px] min-h-[360px]">
         <CardHeader className="flex-row items-center gap-2">
-          <p className="text-2xl font-bold">Investimento</p>
+          <p className="text-2xl font-bold">Investimento total</p>
         </CardHeader>
         <CardContent className="space-y-3">
           <PercentageItem

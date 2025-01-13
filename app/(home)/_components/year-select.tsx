@@ -33,7 +33,7 @@ const YearSelect = () => {
       onValueChange={(value) => handleYearChange(value)}
       defaultValue={year ?? ''}
     >
-      <SelectTrigger className="w-[180px]">
+      <SelectTrigger className="w-[90px]">
         <SelectValue placeholder="Mês" />
       </SelectTrigger>
       <SelectContent>

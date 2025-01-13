@@ -8,7 +8,6 @@ import { getDashboard } from '../_data/get-dashboard'
 import InvestedPerPlatform from './_components/invested-per-platform'
 import MonthSelect from './_components/month-select'
 import TotalInvestedCard from './_components/total-invested-card'
-import TransactionsLineChart from './_components/transactions-line-chart'
 import TransactionPieChart from './_components/transactions-pie-chart'
 import YearSelect from './_components/year-select'
 
@@ -56,12 +55,11 @@ const Home = async ({ searchParams: { month, year } }: HomeProps) => {
         <div className="grid grid-cols-3 gap-6">
           <TotalInvestedCard month={month} year={year} {...dashboard} />
           <TransactionPieChart {...dashboard} />
+        </div>
+        <div className="grid grid-cols-3 gap-6">
           <InvestedPerPlatform
             investedPerPlatform={dashboard.totalInvestedPerPlatform}
           />
-        </div>
-        <div>
-          <TransactionsLineChart />
         </div>
       </div>
     </>

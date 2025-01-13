@@ -12,9 +12,9 @@ const InvestedPerPlatform = ({
   investedPerPlatform,
 }: InvestedPerPlatformProps) => {
   return (
-    <ScrollArea className="h-full max-h-[360px] rounded-md border pb-6">
+    <ScrollArea className="col-span-2 h-full max-h-[360px] rounded-md border pb-6">
       <CardHeader>
-        <CardTitle className="font-bold">Gastos por Plataforma</CardTitle>
+        <CardTitle className="font-bold">Investimento por plataforma</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
         {investedPerPlatform.map((platform) => (

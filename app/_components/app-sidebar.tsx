@@ -72,7 +72,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarGroup>
       </SidebarContent>
       <SidebarSeparator />
-      <SidebarFooter className="flex items-center justify-center py-2">
+      <SidebarFooter className="flex items-center justify-center py-3">
         <UserProfileCard isCollapsed={state} />
       </SidebarFooter>
       <SidebarRail />
