@@ -12,7 +12,7 @@ const AddTransactionButton = () => {
   return (
     <>
       <Button className="font-bold" onClick={() => setDialogIsOpen(true)}>
-        Adicionar Transação
+        Adicionar Investimento
         <ArrowDownUpIcon />
       </Button>
       <UpsertTransactionDialog

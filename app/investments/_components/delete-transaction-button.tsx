@@ -26,9 +26,9 @@ const DeleteTransactionButton = ({
   const handleConfirmDeleteClick = async () => {
     try {
       await deleteTransaction({ transactionId })
-      toast.success('Transação deletada com sucesso!')
+      toast.success('Investimento deletado com sucesso!')
     } catch (error) {
-      toast.error('Erro ao deletar transação')
+      toast.error('Erro ao deletar investimento')
     }
   }
 
@@ -42,7 +42,7 @@ const DeleteTransactionButton = ({
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>
-            Você realmente deseja deletar essa transação?
+            Você realmente deseja deletar esse investimento?
           </AlertDialogTitle>
           <AlertDialogDescription>
             Essa ação não poderá ser desfeita.

@@ -28,16 +28,18 @@ const UserProfileCard = ({ isCollapsed }: UserProfileCardProps) => {
 
       {isCollapsed === 'expanded' && (
         <div>
-          <p className="mb-0.5 text-sm font-bold leading-none">
-            {user?.fullName || 'Usuário'}
-          </p>
-          <p className="text-sm leading-none text-gray-400">
-            {user?.primaryEmailAddress?.emailAddress
-              ? user.primaryEmailAddress.emailAddress.length > 20
-                ? `${user.primaryEmailAddress.emailAddress.slice(0, 20)}...`
-                : user.primaryEmailAddress.emailAddress
-              : 'Sem e-mail'}
-          </p>
+          <div>
+            <p className="mb-0.5 text-sm font-bold leading-none">
+              {user?.fullName || 'Usuário'}
+            </p>
+            <p className="text-sm leading-none text-gray-400">
+              {user?.primaryEmailAddress?.emailAddress
+                ? user.primaryEmailAddress.emailAddress.length > 20
+                  ? `${user.primaryEmailAddress.emailAddress.slice(0, 20)}...`
+                  : user.primaryEmailAddress.emailAddress
+                : 'Sem e-mail'}
+            </p>
+          </div>
         </div>
       )}
     </div>

@@ -15,7 +15,7 @@ const mulish = Mulish({
 export const metadata: Metadata = {
   title: 'ModeON Marketing Tracker | Desenvolvido por Reggi Dev',
   description:
-    'Aplicativo desenhado para organizar todas as transações de marketing da ModeON. Registre transações de marketing, categorias e plataformas. Acompanhe gráficos mensais e otimize seus investimentos.',
+    'Aplicativo desenhado para organizar todas os investimentos de marketing da ModeON. Registre investimentos de marketing, categorias e plataformas. Acompanhe gráficos mensais e otimize seus investimentos.',
 }
 
 export default function RootLayout({

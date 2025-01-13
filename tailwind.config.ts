@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+      },
       colors: {
         danger: '#F6352E',
         background: 'hsl(var(--background))',

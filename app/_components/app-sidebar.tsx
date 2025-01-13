@@ -30,8 +30,8 @@ const data = {
       icon: HomeIcon,
     },
     {
-      title: 'Transações',
-      url: '/transactions',
+      title: 'Investimentos',
+      url: '/investments',
       icon: ArrowLeftRightIcon,
     },
   ],

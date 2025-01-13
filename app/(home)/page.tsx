@@ -39,7 +39,7 @@ const Home = async ({ searchParams: { month, year } }: HomeProps) => {
   return (
     <>
       <Header />
-      <div className="flex h-full flex-col space-y-6 p-6">
+      <div className="container mx-auto flex flex-col space-y-6 p-4 pb-20 md:pb-0 lg:overflow-hidden lg:p-6">
         <div className="flex w-full items-center justify-between">
           <div className="flex flex-col">
             <h1 className="text-3xl font-bold">Dashboard</h1>

@@ -93,10 +93,10 @@ const UpsertTransactionDialog = ({
       setIsOpen(false)
       form.reset()
       isUpdate
-        ? toast.success('Transação atualizada com sucesso')
-        : toast.success('Transação adicionada com sucesso')
+        ? toast.success('Investimento atualizado com sucesso')
+        : toast.success('Investimento adicionado com sucesso')
     } catch (error) {
-      toast.error('Ocorreu um erro ao salvar a transação')
+      toast.error('Ocorreu um erro ao salvar o investimento')
     }
   }
 
@@ -116,7 +116,7 @@ const UpsertTransactionDialog = ({
       <DialogContent>
         <DialogHeader>
           <DialogTitle>
-            {isUpdate ? 'Atualizar' : 'Adicionar'} Transação
+            {isUpdate ? 'Atualizar' : 'Adicionar'} Investimento
           </DialogTitle>
           <DialogDescription>Insira as informações abaixo</DialogDescription>
         </DialogHeader>
