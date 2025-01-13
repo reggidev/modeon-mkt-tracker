@@ -16,6 +16,8 @@ import {
   TableRow,
 } from '@/app/_components/ui/table'
 
+import { ScrollBar } from './scroll-area'
+
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
@@ -75,6 +77,7 @@ export function DataTable<TData, TValue>({
           )}
         </TableBody>
       </Table>
+      <ScrollBar orientation="horizontal" />
     </div>
   )
 }

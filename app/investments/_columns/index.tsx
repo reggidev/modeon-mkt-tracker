@@ -24,18 +24,22 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
   {
     accessorKey: 'platform',
     header: 'Plataforma',
-    cell: ({ row: { original: transaction } }) =>
-      TRANSACTION_PLATFORM_LABELS[transaction.platform],
+    cell: ({ row: { original: transaction } }) => {
+      const platform = TRANSACTION_PLATFORM_LABELS[transaction.platform]
+      return <div className="w-[125px]">{platform}</div>
+    },
   },
   {
     accessorKey: 'date',
     header: 'Data',
-    cell: ({ row: { original: transaction } }) =>
-      new Date(transaction.date).toLocaleDateString('pt-BR', {
+    cell: ({ row: { original: transaction } }) => {
+      const date = new Date(transaction.date).toLocaleDateString('pt-BR', {
         day: '2-digit',
         month: 'long',
         year: 'numeric',
-      }),
+      })
+      return <div className="w-[185px]">{date}</div>
+    },
   },
   {
     accessorKey: 'amount',
@@ -51,7 +55,7 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
     header: '',
     cell: ({ row: { original: transaction } }) => {
       return (
-        <div className="space-x-2">
+        <div className="w-24 space-x-2">
           <EditTransactionButton transaction={transaction} />
           <DeleteTransactionButton transactionId={transaction.id} />
         </div>

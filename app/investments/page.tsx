@@ -1,4 +1,3 @@
-import { UserButton } from '@clerk/nextjs'
 import { auth } from '@clerk/nextjs/server'
 import { redirect } from 'next/navigation'
 
@@ -28,13 +27,12 @@ const TransactionsPage = async () => {
     <>
       <Header />
       <div className="container flex h-full flex-col space-y-6 overflow-hidden p-6">
-        <div className="flex w-full items-center justify-between">
-          <div className="flex flex-col">
+        <div className="flex w-full flex-col justify-between lg:flex-row lg:items-center">
+          <div className="mb-2 flex flex-col lg:mb-0">
             <h1 className="text-3xl font-bold">Investimentos</h1>
             <p className="text-sm text-muted-foreground">
               Aqui você obtém todas as informações de cada investimento
             </p>
-            <UserButton />
           </div>
           <AddTransactionButton />
         </div>
