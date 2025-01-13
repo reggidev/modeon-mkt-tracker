@@ -12,7 +12,7 @@ const InvestedPerPlatform = ({
   investedPerPlatform,
 }: InvestedPerPlatformProps) => {
   return (
-    <ScrollArea className="col-span-2 h-full max-h-[360px] rounded-md border pb-6">
+    <ScrollArea className="h-full rounded-md border pb-6 md:col-span-1 lg:col-span-2">
       <CardHeader>
         <CardTitle className="font-bold">Investimento por plataforma</CardTitle>
       </CardHeader>
