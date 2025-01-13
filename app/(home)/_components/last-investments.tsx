@@ -23,7 +23,10 @@ const LastInvestments = ({ lastInvestments }: LastInvestmentsProps) => {
       </CardHeader>
       <CardContent className="space-y-6">
         {lastInvestments.map((investment) => (
-          <div className="flex items-center justify-between">
+          <div
+            key={investment.id}
+            className="flex items-center justify-between"
+          >
             <div className="flex items-center gap-3">
               <div className="rounded-lg bg-accent p-2">
                 <Image
