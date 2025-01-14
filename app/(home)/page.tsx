@@ -38,9 +38,9 @@ const Home = async ({ searchParams: { month, year } }: HomeProps) => {
   return (
     <>
       <Header />
-      <div className="container flex flex-col space-y-6 p-4 lg:overflow-hidden lg:p-6">
-        <div className="flex w-full flex-col justify-between lg:flex-row lg:items-center">
-          <div className="mb-2 flex flex-col lg:mb-0">
+      <div className="container flex flex-col space-y-6 p-4 xl:overflow-hidden xl:p-6">
+        <div className="flex w-full flex-col justify-between xl:flex-row xl:items-center">
+          <div className="mb-2 flex flex-col xl:mb-0">
             <h1 className="text-3xl font-bold">Dashboard</h1>
             <p className="text-sm text-muted-foreground">
               Aqui você obtém uma visão geral do investimento
@@ -51,7 +51,7 @@ const Home = async ({ searchParams: { month, year } }: HomeProps) => {
             <MonthSelect />
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[2fr,1fr] lg:overflow-hidden">
+        <div className="grid grid-cols-1 gap-6 lg:overflow-hidden xl:grid-cols-[2fr,1fr]">
           <div className="grid grid-cols-2 gap-6 overflow-hidden">
             <TotalInvestedCard month={month} year={year} {...dashboard} />
             <TransactionPieChart {...dashboard} />

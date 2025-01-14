@@ -32,7 +32,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="flex h-full flex-col lg:overflow-hidden">
+          <main className="flex h-full flex-col xl:overflow-hidden">
             <ClerkProvider
               appearance={{
                 baseTheme: dark,
