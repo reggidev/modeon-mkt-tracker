@@ -2,7 +2,7 @@ import { auth } from '@clerk/nextjs/server'
 import { redirect } from 'next/navigation'
 
 import AddTransactionButton from '../_components/add-transaction-button'
-import Header from '../_components/header'
+import NavBar from '../_components/navbar'
 import { DataTable } from '../_components/ui/data-table'
 import { ScrollArea } from '../_components/ui/scroll-area'
 import { db } from '../_lib/prisma'
@@ -25,7 +25,7 @@ const TransactionsPage = async () => {
 
   return (
     <>
-      <Header />
+      <NavBar />
       <div className="container flex h-full flex-col space-y-6 overflow-hidden p-6">
         <div className="flex w-full flex-col justify-between lg:flex-row lg:items-center">
           <div className="mb-2 flex flex-col lg:mb-0">

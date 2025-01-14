@@ -2,7 +2,7 @@ import { auth } from '@clerk/nextjs/server'
 import { isMatch } from 'date-fns'
 import { redirect } from 'next/navigation'
 
-import Header from '../_components/header'
+import NavBar from '../_components/navbar'
 import { getDashboard } from '../_data/get-dashboard'
 import InvestedPerPlatform from './_components/invested-per-platform'
 import LastInvestments from './_components/last-investments'
@@ -37,7 +37,7 @@ const Home = async ({ searchParams: { month, year } }: HomeProps) => {
 
   return (
     <>
-      <Header />
+      <NavBar />
       <div className="container flex flex-col space-y-6 p-4 xl:overflow-hidden xl:p-6">
         <div className="flex w-full flex-col justify-between xl:flex-row xl:items-center">
           <div className="mb-2 flex flex-col xl:mb-0">
