@@ -24,26 +24,26 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <ClerkProvider
-      appearance={{
-        baseTheme: dark,
-      }}
-    >
-      <html lang="pt-BR">
-        <body className={`${mulish.className} antialiased`}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <main className="flex h-full flex-col lg:overflow-hidden">
+    <html lang="pt-BR">
+      <body className={`${mulish.className} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="flex h-full flex-col lg:overflow-hidden">
+            <ClerkProvider
+              appearance={{
+                baseTheme: dark,
+              }}
+            >
               {children}
-            </main>
-          </ThemeProvider>
-          <Toaster />
-        </body>
-      </html>
-    </ClerkProvider>
+            </ClerkProvider>
+          </main>
+        </ThemeProvider>
+        <Toaster />
+      </body>
+    </html>
   )
 }
