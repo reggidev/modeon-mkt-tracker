@@ -1,6 +1,6 @@
 'use client'
 
-import { useClerk } from '@clerk/nextjs'
+import { useClerk, UserButton } from '@clerk/nextjs'
 import { LogOutIcon, SettingsIcon } from 'lucide-react'
 import { redirect } from 'next/navigation'
 
@@ -26,7 +26,7 @@ const NavBar = () => {
   return (
     <>
       <div className="hidden md:block">
-        <header className="container -mt-3 flex justify-end gap-3 px-4 py-2">
+        <header className="container -mt-3 flex justify-end gap-3 px-4 py-2 xl:-mt-7">
           <ToggleThemeButton />
           <Button onClick={handleSignOutClick} variant="outline">
             <LogOutIcon size={16} />
@@ -37,7 +37,8 @@ const NavBar = () => {
       </div>
 
       <div className="block md:hidden">
-        <header className="-mt-4 flex justify-end p-2">
+        <header className="-mt-4 flex justify-end gap-4 p-2">
+          <UserButton />
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon">

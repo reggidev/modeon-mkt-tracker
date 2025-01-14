@@ -26,9 +26,9 @@ const TransactionsPage = async () => {
   return (
     <>
       <NavBar />
-      <div className="container flex h-full flex-col space-y-6 overflow-hidden p-6">
-        <div className="flex w-full flex-col justify-between lg:flex-row lg:items-center">
-          <div className="mb-2 flex flex-col lg:mb-0">
+      <div className="container flex h-full flex-col space-y-6 p-6 xl:overflow-hidden">
+        <div className="flex w-full flex-col justify-between xl:flex-row xl:items-center">
+          <div className="mb-2 flex flex-col xl:mb-0">
             <h1 className="text-3xl font-bold">Investimentos</h1>
             <p className="text-sm text-muted-foreground">
               Aqui você obtém todas as informações de cada investimento

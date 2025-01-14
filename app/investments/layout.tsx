@@ -9,7 +9,7 @@ export default function TransactionsLayout({
   return (
     <SidebarProvider>
       <AppSidebar />
-      <main className="flex w-full flex-col">
+      <main className="flex w-full flex-col overflow-x-hidden">
         <SidebarTrigger />
         {children}
       </main>
