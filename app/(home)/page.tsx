@@ -43,7 +43,7 @@ const Home = async ({ searchParams: { month, year } }: HomeProps) => {
           <div className="mb-2 flex flex-col xl:mb-0">
             <h1 className="text-3xl font-bold">Dashboard</h1>
             <p className="text-sm text-muted-foreground">
-              Aqui você obtém uma visão geral do investimento
+              Aqui você obtém uma visão geral dos investimentos
             </p>
           </div>
           <div className="flex items-center gap-3">
