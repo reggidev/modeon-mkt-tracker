@@ -4,13 +4,13 @@ import { ArrowDownUpIcon } from 'lucide-react'
 import { useState } from 'react'
 
 import { Button } from './ui/button'
-import UpsertTransactionDialog from './upsert-transaction-dialog'
+import UpsertInvestmentDialog from './upsert-investment-dialog'
 
-interface AddTransactionButtonProps {
+interface AddInvestmentButtonProps {
   className?: string
 }
 
-const AddTransactionButton = ({ className }: AddTransactionButtonProps) => {
+const AddInvestmentButton = ({ className }: AddInvestmentButtonProps) => {
   const [dialogIsOpen, setDialogIsOpen] = useState(false)
 
   return (
@@ -22,7 +22,7 @@ const AddTransactionButton = ({ className }: AddTransactionButtonProps) => {
         Adicionar Investimento
         <ArrowDownUpIcon />
       </Button>
-      <UpsertTransactionDialog
+      <UpsertInvestmentDialog
         isOpen={dialogIsOpen}
         setIsOpen={setDialogIsOpen}
       />
@@ -30,4 +30,4 @@ const AddTransactionButton = ({ className }: AddTransactionButtonProps) => {
   )
 }
 
-export default AddTransactionButton
+export default AddInvestmentButton

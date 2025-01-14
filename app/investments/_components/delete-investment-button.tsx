@@ -14,18 +14,18 @@ import {
 } from '@/app/_components/ui/alert-dialog'
 import { Button } from '@/app/_components/ui/button'
 
-import { deleteTransaction } from '../_actions/delete-transaction'
+import { deleteInvestment } from '../_actions/delete-investment'
 
-interface DeleteTransactionButtonProps {
+interface DeleteInvestmentButtonProps {
   transactionId: string
 }
 
-const DeleteTransactionButton = ({
+const DeleteInvestmentButton = ({
   transactionId,
-}: DeleteTransactionButtonProps) => {
+}: DeleteInvestmentButtonProps) => {
   const handleConfirmDeleteClick = async () => {
     try {
-      await deleteTransaction({ transactionId })
+      await deleteInvestment({ transactionId })
       toast.success('Investimento deletado com sucesso!')
     } catch (error) {
       toast.error('Erro ao deletar investimento')
@@ -59,4 +59,4 @@ const DeleteTransactionButton = ({
   )
 }
 
-export default DeleteTransactionButton
+export default DeleteInvestmentButton

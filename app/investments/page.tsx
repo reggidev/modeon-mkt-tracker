@@ -1,14 +1,14 @@
 import { auth } from '@clerk/nextjs/server'
 import { redirect } from 'next/navigation'
 
-import AddTransactionButton from '../_components/add-transaction-button'
+import AddInvestmentButton from '../_components/add-investment-button'
 import NavBar from '../_components/navbar'
 import { DataTable } from '../_components/ui/data-table'
 import { ScrollArea } from '../_components/ui/scroll-area'
 import { db } from '../_lib/prisma'
-import { transactionColumns } from './_columns'
+import { investmentColumns } from './_columns'
 
-const TransactionsPage = async () => {
+const InvestmentsPage = async () => {
   const { userId } = await auth()
   if (!userId) {
     redirect('/login')
@@ -34,11 +34,11 @@ const TransactionsPage = async () => {
               Aqui você obtém todas as informações de cada investimento
             </p>
           </div>
-          <AddTransactionButton />
+          <AddInvestmentButton />
         </div>
         <ScrollArea className="h-full">
           <DataTable
-            columns={transactionColumns}
+            columns={investmentColumns}
             data={JSON.parse(JSON.stringify(transactions))}
           />
         </ScrollArea>
@@ -47,4 +47,4 @@ const TransactionsPage = async () => {
   )
 }
 
-export default TransactionsPage
+export default InvestmentsPage

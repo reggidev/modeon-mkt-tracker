@@ -3,13 +3,13 @@ import { CircleIcon } from 'lucide-react'
 
 import { Badge } from '@/app/_components/ui/badge'
 
-interface TransactionCategoryBadgeProps {
+interface InvestmentCategoryBadgeProps {
   transaction: Transaction
 }
 
-const TransactionCategoryBadge = ({
+const InvestmentCategoryBadge = ({
   transaction,
-}: TransactionCategoryBadgeProps) => {
+}: InvestmentCategoryBadgeProps) => {
   if (transaction.category === TransactionCategory.ONLINE) {
     return (
       <Badge className="bg-primary/70 font-bold hover:bg-primary/50 dark:text-white">
@@ -29,4 +29,4 @@ const TransactionCategoryBadge = ({
   )
 }
 
-export default TransactionCategoryBadge
+export default InvestmentCategoryBadge

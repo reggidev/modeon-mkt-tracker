@@ -1,7 +1,7 @@
 import { CardContent, CardHeader, CardTitle } from '@/app/_components/ui/card'
 import { Progress } from '@/app/_components/ui/progress'
 import { ScrollArea } from '@/app/_components/ui/scroll-area'
-import { TRANSACTION_PLATFORM_LABELS } from '@/app/_constants/transactions'
+import { INVESTMENT_PLATFORM_LABELS } from '@/app/_constants/investments'
 import type { TotalInvestedPerPlatform } from '@/app/_data/get-dashboard/types'
 
 interface InvestedPerPlatformProps {
@@ -21,7 +21,7 @@ const InvestedPerPlatform = ({
           <div key={platform.platform} className="space-y-2">
             <div className="flex w-full justify-between">
               <p className="text-sm font-bold">
-                {TRANSACTION_PLATFORM_LABELS[platform.platform]}
+                {INVESTMENT_PLATFORM_LABELS[platform.platform]}
               </p>
               <p className="text-sm font-bold">{platform.percentageOfTotal}%</p>
             </div>

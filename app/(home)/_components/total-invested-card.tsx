@@ -1,6 +1,6 @@
 import { CoinsIcon, MapPinnedIcon, TrafficConeIcon } from 'lucide-react'
 
-import AddTransactionButton from '@/app/_components/add-transaction-button'
+import AddInvestmentButton from '@/app/_components/add-investment-button'
 import { Card, CardContent, CardHeader } from '@/app/_components/ui/card'
 import { Separator } from '@/app/_components/ui/separator'
 
@@ -44,7 +44,7 @@ const TotalInvestedCard = async ({
               amount={investmentTotal}
             />
           </div>
-          <AddTransactionButton className="w-full" />
+          <AddInvestmentButton className="w-full" />
         </CardContent>
       </Card>
     </div>

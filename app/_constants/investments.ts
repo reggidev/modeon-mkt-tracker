@@ -1,11 +1,11 @@
 import { TransactionCategory, TransactionPlatform } from '@prisma/client'
 
-export const TRANSACTION_CATEGORY_LABELS = {
+export const INVESTMENT_CATEGORY_LABELS = {
   OFFLINE: 'Offline',
   ONLINE: 'Online',
 }
 
-export const TRANSACTION_PLATFORM_LABELS = {
+export const INVESTMENT_PLATFORM_LABELS = {
   SITE: 'Website',
   EMAIL_MARKETING: 'Email Marketing',
   SOCIAL_MEDIA: 'Redes Sociais',
@@ -15,7 +15,7 @@ export const TRANSACTION_PLATFORM_LABELS = {
   TELEVISION: 'Televisão',
 }
 
-export const TRANSACTION_PAYMENT_METHOD_ICONS = {
+export const INVESTMENT_PAYMENT_METHOD_ICONS = {
   [TransactionPlatform.SITE]: 'website.svg',
   [TransactionPlatform.EMAIL_MARKETING]: 'mail.svg',
   [TransactionPlatform.SOCIAL_MEDIA]: 'social-media.svg',
@@ -25,44 +25,44 @@ export const TRANSACTION_PAYMENT_METHOD_ICONS = {
   [TransactionPlatform.TELEVISION]: 'tv.svg',
 }
 
-export const TRANSACTION_CATEGORY_OPTIONS = [
+export const INVESTMENT_CATEGORY_OPTIONS = [
   {
     value: TransactionCategory.OFFLINE,
-    label: TRANSACTION_CATEGORY_LABELS.OFFLINE,
+    label: INVESTMENT_CATEGORY_LABELS.OFFLINE,
   },
   {
     value: TransactionCategory.ONLINE,
-    label: TRANSACTION_CATEGORY_LABELS.ONLINE,
+    label: INVESTMENT_CATEGORY_LABELS.ONLINE,
   },
 ]
 
-export const TRANSACTION_PLATFORM_OPTIONS = [
+export const INVESTMENT_PLATFORM_OPTIONS = [
   {
     value: TransactionPlatform.SITE,
-    label: TRANSACTION_PLATFORM_LABELS[TransactionPlatform.SITE],
+    label: INVESTMENT_PLATFORM_LABELS[TransactionPlatform.SITE],
   },
   {
     value: TransactionPlatform.EMAIL_MARKETING,
-    label: TRANSACTION_PLATFORM_LABELS[TransactionPlatform.EMAIL_MARKETING],
+    label: INVESTMENT_PLATFORM_LABELS[TransactionPlatform.EMAIL_MARKETING],
   },
   {
     value: TransactionPlatform.SOCIAL_MEDIA,
-    label: TRANSACTION_PLATFORM_LABELS[TransactionPlatform.SOCIAL_MEDIA],
+    label: INVESTMENT_PLATFORM_LABELS[TransactionPlatform.SOCIAL_MEDIA],
   },
   {
     value: TransactionPlatform.ECOMMERCE,
-    label: TRANSACTION_PLATFORM_LABELS[TransactionPlatform.ECOMMERCE],
+    label: INVESTMENT_PLATFORM_LABELS[TransactionPlatform.ECOMMERCE],
   },
   {
     value: TransactionPlatform.PHYSICAL_STORE,
-    label: TRANSACTION_PLATFORM_LABELS[TransactionPlatform.PHYSICAL_STORE],
+    label: INVESTMENT_PLATFORM_LABELS[TransactionPlatform.PHYSICAL_STORE],
   },
   {
     value: TransactionPlatform.OUTDOOR,
-    label: TRANSACTION_PLATFORM_LABELS[TransactionPlatform.OUTDOOR],
+    label: INVESTMENT_PLATFORM_LABELS[TransactionPlatform.OUTDOOR],
   },
   {
     value: TransactionPlatform.TELEVISION,
-    label: TRANSACTION_PLATFORM_LABELS[TransactionPlatform.TELEVISION],
+    label: INVESTMENT_PLATFORM_LABELS[TransactionPlatform.TELEVISION],
   },
 ]

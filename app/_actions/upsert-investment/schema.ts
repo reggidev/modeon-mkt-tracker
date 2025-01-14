@@ -1,7 +1,7 @@
 import { TransactionCategory, TransactionPlatform } from '@prisma/client'
 import { z } from 'zod'
 
-export const upsertTransactionSchema = z.object({
+export const upsertInvestmentSchema = z.object({
   name: z.string().trim().min(1),
   amount: z.number().positive(),
   category: z.nativeEnum(TransactionCategory),

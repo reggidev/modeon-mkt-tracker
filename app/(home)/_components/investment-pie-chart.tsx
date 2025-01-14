@@ -26,17 +26,17 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-interface TransactionsPieChartProps {
+interface InvestmentPieChartProps {
   offlineTotal: number
   onlineTotal: number
   typesPercentage: TransactionPercentagePerCategory
 }
 
-const TransactionsPieChart = ({
+const InvestmentPieChart = ({
   offlineTotal,
   onlineTotal,
   typesPercentage,
-}: TransactionsPieChartProps) => {
+}: InvestmentPieChartProps) => {
   const chartData = [
     {
       type: TransactionCategory.OFFLINE,
@@ -95,4 +95,4 @@ const TransactionsPieChart = ({
   )
 }
 
-export default TransactionsPieChart
+export default InvestmentPieChart

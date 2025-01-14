@@ -4,11 +4,11 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
 
-import { upsertTransaction } from '../_actions/upsert-transaction'
+import { upsertInvestment } from '../_actions/upsert-investment'
 import {
-  TRANSACTION_CATEGORY_OPTIONS,
-  TRANSACTION_PLATFORM_OPTIONS,
-} from '../_constants/transactions'
+  INVESTMENT_CATEGORY_OPTIONS,
+  INVESTMENT_PLATFORM_OPTIONS,
+} from '../_constants/investments'
 import { MoneyInput } from './money-input'
 import { Button } from './ui/button'
 import { DatePicker } from './ui/date-picker'
@@ -63,19 +63,19 @@ const formSchema = z.object({
 
 type FormSchema = z.infer<typeof formSchema>
 
-interface UpsertTransactionDialogProps {
+interface UpsertInvestmentDialogProps {
   isOpen: boolean
   setIsOpen: (isOpen: boolean) => void
   transactionId?: string
   defaultValues?: FormSchema
 }
 
-const UpsertTransactionDialog = ({
+const UpsertInvestmentDialog = ({
   isOpen,
   setIsOpen,
   transactionId,
   defaultValues,
-}: UpsertTransactionDialogProps) => {
+}: UpsertInvestmentDialogProps) => {
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: defaultValues ?? {
@@ -89,7 +89,7 @@ const UpsertTransactionDialog = ({
 
   const onSubmit = async (data: FormSchema) => {
     try {
-      await upsertTransaction({ ...data, id: transactionId })
+      await upsertInvestment({ ...data, id: transactionId })
       setIsOpen(false)
       form.reset()
       isUpdate
@@ -175,7 +175,7 @@ const UpsertTransactionDialog = ({
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      {TRANSACTION_CATEGORY_OPTIONS.map((option) => (
+                      {INVESTMENT_CATEGORY_OPTIONS.map((option) => (
                         <SelectItem key={option.value} value={option.value}>
                           {option.label}
                         </SelectItem>
@@ -203,7 +203,7 @@ const UpsertTransactionDialog = ({
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      {TRANSACTION_PLATFORM_OPTIONS.map((option) => (
+                      {INVESTMENT_PLATFORM_OPTIONS.map((option) => (
                         <SelectItem key={option.value} value={option.value}>
                           {option.label}
                         </SelectItem>
@@ -244,4 +244,4 @@ const UpsertTransactionDialog = ({
   )
 }
 
-export default UpsertTransactionDialog
+export default UpsertInvestmentDialog

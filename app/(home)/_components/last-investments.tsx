@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Button } from '@/app/_components/ui/button'
 import { CardContent, CardHeader, CardTitle } from '@/app/_components/ui/card'
 import { ScrollArea } from '@/app/_components/ui/scroll-area'
-import { TRANSACTION_PAYMENT_METHOD_ICONS } from '@/app/_constants/transactions'
+import { INVESTMENT_PAYMENT_METHOD_ICONS } from '@/app/_constants/investments'
 import { formatCurrency } from '@/app/utils/currency'
 
 interface LastInvestmentsProps {
@@ -18,7 +18,7 @@ const LastInvestments = ({ lastInvestments }: LastInvestmentsProps) => {
       <CardHeader className="flex-row items-center justify-between">
         <CardTitle className="font-bold">Últimos Investimentos</CardTitle>
         <Button variant="outline" className="rounded-full font-bold" asChild>
-          <Link href="/transactions">Ver mais</Link>
+          <Link href="/investments">Ver mais</Link>
         </Button>
       </CardHeader>
       <CardContent className="space-y-6">
@@ -31,8 +31,8 @@ const LastInvestments = ({ lastInvestments }: LastInvestmentsProps) => {
               <div className="rounded-lg bg-accent p-2">
                 <Image
                   src={
-                    TRANSACTION_PAYMENT_METHOD_ICONS[
-                      investment.platform as keyof typeof TRANSACTION_PAYMENT_METHOD_ICONS
+                    INVESTMENT_PAYMENT_METHOD_ICONS[
+                      investment.platform as keyof typeof INVESTMENT_PAYMENT_METHOD_ICONS
                     ]
                   }
                   width={20}

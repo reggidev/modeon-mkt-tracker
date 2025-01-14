@@ -3,13 +3,13 @@
 import { type Transaction } from '@prisma/client'
 import { ColumnDef } from '@tanstack/react-table'
 
-import { TRANSACTION_PLATFORM_LABELS } from '@/app/_constants/transactions'
+import { INVESTMENT_PLATFORM_LABELS } from '@/app/_constants/investments'
 
-import DeleteTransactionButton from '../_components/delete-transaction-button'
-import EditTransactionButton from '../_components/edit-transaction-button'
-import TransactionCategoryBadge from '../_components/platform-badge'
+import DeleteInvestmentButton from '../_components/delete-investment-button'
+import EditInvestmentButton from '../_components/edit-investment-button'
+import InvestmentCategoryBadge from '../_components/platform-badge'
 
-export const transactionColumns: ColumnDef<Transaction>[] = [
+export const investmentColumns: ColumnDef<Transaction>[] = [
   {
     accessorKey: 'name',
     header: 'Nome',
@@ -18,14 +18,14 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
     accessorKey: 'category',
     header: 'Categoria',
     cell: ({ row: { original: transaction } }) => (
-      <TransactionCategoryBadge transaction={transaction} />
+      <InvestmentCategoryBadge transaction={transaction} />
     ),
   },
   {
     accessorKey: 'platform',
     header: 'Plataforma',
     cell: ({ row: { original: transaction } }) => {
-      const platform = TRANSACTION_PLATFORM_LABELS[transaction.platform]
+      const platform = INVESTMENT_PLATFORM_LABELS[transaction.platform]
       return <div className="w-[125px]">{platform}</div>
     },
   },
@@ -56,8 +56,8 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
     cell: ({ row: { original: transaction } }) => {
       return (
         <div className="w-24 space-x-2">
-          <EditTransactionButton transaction={transaction} />
-          <DeleteTransactionButton transactionId={transaction.id} />
+          <EditInvestmentButton transaction={transaction} />
+          <DeleteInvestmentButton transactionId={transaction.id} />
         </div>
       )
     },

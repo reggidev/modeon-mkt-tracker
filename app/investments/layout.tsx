@@ -1,7 +1,7 @@
 import { AppSidebar } from '../_components/app-sidebar'
 import { SidebarProvider, SidebarTrigger } from '../_components/ui/sidebar'
 
-export default function TransactionsLayout({
+export default function InvestmentLayout({
   children,
 }: {
   children: React.ReactNode

@@ -5,10 +5,10 @@ import { redirect } from 'next/navigation'
 import NavBar from '../_components/navbar'
 import { getDashboard } from '../_data/get-dashboard'
 import InvestedPerPlatform from './_components/invested-per-platform'
+import InvestmentPieChart from './_components/investment-pie-chart'
 import LastInvestments from './_components/last-investments'
 import MonthSelect from './_components/month-select'
 import TotalInvestedCard from './_components/total-invested-card'
-import TransactionPieChart from './_components/transactions-pie-chart'
 import YearSelect from './_components/year-select'
 
 interface HomeProps {
@@ -54,7 +54,7 @@ const Home = async ({ searchParams: { month, year } }: HomeProps) => {
         <div className="grid grid-cols-1 gap-6 lg:overflow-hidden xl:grid-cols-[2fr,1fr]">
           <div className="grid grid-cols-2 gap-6 overflow-hidden">
             <TotalInvestedCard month={month} year={year} {...dashboard} />
-            <TransactionPieChart {...dashboard} />
+            <InvestmentPieChart {...dashboard} />
             <InvestedPerPlatform
               investedPerPlatform={dashboard.totalInvestedPerPlatform}
             />
