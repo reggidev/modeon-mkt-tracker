@@ -34,7 +34,7 @@ const YearSelect = () => {
       defaultValue={year ?? ''}
     >
       <SelectTrigger className="w-[90px]">
-        <SelectValue placeholder="Mês" />
+        <SelectValue placeholder="Ano" />
       </SelectTrigger>
       <SelectContent>
         {YEAR_OPTIONS.map((option) => (
