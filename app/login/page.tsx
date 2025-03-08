@@ -25,7 +25,8 @@ const LoginPage = async () => {
         <h1 className="mb-3 text-4xl font-bold">Bem-vindo</h1>
         <p className="mb-8 text-center text-muted-foreground">
           O ModeON Marketing Tracker é uma plataforma de gestão financeira para
-          monitorar suas movimentações facilitando o controle do orçamento.
+          monitorar movimentações de tráfego pago facilitando o controle do
+          orçamento.
         </p>
         <SignInButton>
           <Button variant="outline" className="hover:bg-primary/10">
